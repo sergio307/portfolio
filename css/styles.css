@@ -1,0 +1,287 @@
+html,body{
+    margin: 0px;
+    padding: 0px;
+}
+body{
+    background-color: #2b2b2b;
+    font-family: 'Montserrat', sans-serif; /*usando o google fonts*/
+}
+.navigation{
+    background-color: #2b2b2b;
+    color: white;
+    height: 50px;
+    
+    animation-name: navegacao; /* O nome da animação criada*/
+    animation-duration: 4s; 
+}
+.navigation ul{ /*Representa toda a lista de botões*/
+    margin-top: 0px;
+    list-style: none; /* Tirar os marcadores */
+    padding-left: 0px;
+    text-align: right;
+    height: 50px;
+}
+.navigation li{ /*Representa cada "botão" dentro da lista */
+    display: inline-block; /*Para deixar um texto do lado do outro*/
+    padding-left: 30px;
+    padding-right: 30px;
+    line-height: 50px;
+    font-size: 18px;  
+    font-weight: 100;
+}
+.navigation a{
+    color:white;
+    text-decoration: none;
+}
+.navigation a:hover{
+    color:#f27609;
+}
+.navigation li.threeline-icon{
+    display: none;/*Não mostrar o display*/   
+}
+.navigation li.threeline-icon:hover{
+    color: #f27609;
+    cursor: pointer;
+}
+.capa{
+    color: white;
+}
+.capa span{
+    color: #f27609;
+    display: block; /*Para ficar na linha de baixo*/
+}
+.capa div{
+    display: inline-block;
+    height: 650px;
+}
+.profile-pic{
+    width: 40%; /*Usando a % é possível deixar o site responsivo*/
+    text-align: center;
+    
+    animation-name: profile-capa; /* O nome da animação criada*/
+    animation-duration: 2s; 
+}
+.profile-pic img{
+    width: 320px;
+    border-radius: 320px;
+    margin-top: 100px;
+}
+.profile-title{
+    vertical-align: top;
+    width: 59%;
+    
+    animation-name: titulo-capa; /* O nome da animação criada*/
+    animation-duration: 2s; 
+}
+.profile-title h1{
+    font-size: 58px;
+    margin-top: 200px;
+    text-transform: uppercase; /*Deixar as letras maiusculas*/
+    font-weight: 400;
+    line-height: 54px;/*Diminuir o espaçamento das linhas*/
+}
+.profile-title h2{
+    font-size: 16px;
+    font-weight: 100;
+    margin-top: -25px;
+}
+.main{ /*Colocar as margens ao redor da pagina (para nao ficar grudado na margem)*/
+    /* padding: 80px 180px 80px 100px; PODE SER DECLARADO ASSIM*/
+    padding-top: 80px;
+    padding-right: 180px; 
+    padding-bottom: 80px;
+    padding-left: 100px;
+    
+    animation-name: conteudo; /* O nome da animação criada*/
+    animation-duration: 2s; 
+}
+.cv-pic
+{
+    float: left;
+    width: 250px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+.main h1{
+    color: white;
+    font-weight: normal;
+}
+.main h2{
+    color: white;
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: normal;
+    margin-top: 40px;
+}
+.main h3{
+    color:#f27609;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+.main p{
+    color: white;
+    font-size: 18px;
+    font-weight: 100;
+    line-height: 24px;
+    text-align: justify;
+}
+.caminho{
+    list-style: none;
+    padding-left: 0;
+    color: grey;
+}
+.caminho li{
+     display:inline-block;
+}
+.caminho a{
+    color:grey;
+}
+.social-img{
+    width: 50px;
+    margin-right: 10px;
+}
+.miniatura{
+    width: 320px;
+    height: 320px;
+    display: inline-block;
+    margin-right: 15px;
+    margin-bottom: 15px;
+    overflow: hidden;/*Esconde a sobra do blackbox*/
+}
+.miniatura a{
+    text-decoration: none; /*tira o sublinhado dos links*/
+}
+.blackbox{
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0;
+    padding-top: 120px;
+    transition: 1s; /*Quando tirar o mouse de cima não voltar muito rapido*/
+}
+.blackbox:hover{ /*Essa função só vai valer quando o mouse estiver por cima do elemento*/
+    opacity: 0.8; /*0.8 = 80%*/
+    transition: 1s;
+}
+.blackbox-text{
+    text-align: center;
+}
+.blackbox-text h1{
+    font-size: 16px;
+    color: #f27609;
+    text-transform: uppercase;
+    margin-top: 0;
+}
+.blackbox-text h2{
+    text-transform: none; /*None para anular o setup que já foi feito antes*/
+    font-weight: 100;
+    margin-top: 0;
+}
+.foto-trabalhos{
+    width: 100%; /*100% do div main*/
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.back-link{
+    color: #f27609;
+}
+
+/*ANIMAÇÕES*/
+
+@keyframes profile-capa{
+    0% {opacity: 0; transform: translate(0px,20px)}/*Aparecer e vir de baixo*/
+    100% {opacity: 1; transform: translate(0px,0px)}
+} 
+@keyframes titulo-capa{
+    0% {opacity: 0; transform: translate(0px,-20px)}/*Aparecer e vir de cima*/
+    100% {opacity: 1; transform: translate(0px,0px)}
+} 
+@keyframes conteudo{
+    0% {opacity: 0; transform: translate(-20px,0px)}/*Aparecer e vir da direita*/
+    100% {opacity: 1; transform: translate(0px,0px)}
+} 
+@keyframes navegacao{
+    0% {opacity: 0}/*Aparecer*/
+    50% {opacity: 0} /*Até aqui não quero que apareca para que as outras animacoes terminem primeiro*/
+    100% {opacity: 1}
+} 
+
+/*RESPONSIVIDADE*/
+
+@media(max-width: 1000px){
+    .navigation li{
+        display: none;
+}
+    .navigation li.threeline-icon{
+        display: inline-block;
+    }
+    .capa div{
+    display: block;
+    height: auto;
+    }
+    .profile-pic{
+        width: 100%;
+    }
+    .profile-pic img{
+        margin-top: 0;
+        max-width: 80%; /*Nunca seja 80% maior do elemento que ela esta contida*/
+    }
+    .profile-title{
+        width: 100%;
+        text-align: center;
+    }
+    .profile-title h1{
+        margin-top: 25px;
+        font-size: 35px;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+    .profile-title h2{
+        margin-left: 20px;
+        margin-right: 20px;
+        margin-top: 20px;
+    }
+    .main{
+        padding: 10px 5% 40px 5%; /*Do lado esq/dir colocamos a % para ficar bom para celular e tablet*/
+    }
+    .main a{
+        overflow-wrap: break-word; /*Quebrar links*/
+        word-wrap: break-word;
+    }
+    .main p{
+        text-align: left;
+        line-height: 30px;
+    }
+    .caminho li{
+        font-size: 12px;
+    }
+    .cv-pic{
+    float: none;
+    max-width:100%;
+    }   
+    .miniatura{
+        max-width: 100%;
+        background-size: auto 100%;/*Largura (auto e altura 100%*/
+    }
+    .blackbox{
+        opacity: 0.7;
+    }
+    
+    /*JAVASCRIPT*/
+    .menujs{
+        height: auto;
+    }
+    .menujs ul{
+        height: auto;
+        text-align: center;
+        padding-right: 15%;
+        padding-left: 15%;
+    }
+    .menujs li{
+        display: block;
+        border-bottom: solid grey 1px;  
+        width: 100%;
+        padding: 0;
+        font-size: 16px;
+    }
+}
