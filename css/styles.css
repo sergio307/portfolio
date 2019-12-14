@@ -125,6 +125,11 @@ body{
     line-height: 24px;
     text-align: justify;
 }
+.habilidades{
+    color: white;
+    font-weight: 100;
+    font-size: 18px;
+}
 .caminho{
     list-style: none;
     padding-left: 0;
